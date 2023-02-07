@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    style
+        include ../css/bootstrap.min.css
+        include ../css/toastr.min.css   
+        include ../css/style.css
+
+</head>
+<body>
+    <div class="container">
+        <h1>Add A New Article</h1>
+        <form action="/articles/add"  method="post" id="form" enctype="multipart/form-data">
+            <div class="form-group my-2">
+                <label for="title">Select Image</label>
+                <input type="file" name="img" id="images" class="form-control">
+            </div>
+            <div class="form-group my-2">
+                <label for="title">News Title</label>
+                <input type="text" name="title" id="title" class="form-control">
+            </div>
+            <div class="form-group my-2">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" class="form-control">
+            </div>
+            <div class="form-group my-2">
+                <label for="catagory">Select The catagory</label>
+                <select class="form-select" aria-label="Default select example" name="catagory">
+                    <option value="world">world</option>
+                    <option value="sports">Sports</option>
+                    <option value="knowledge">knowledge</option>
+                    <option value="india">india</option>
+                    <option value="other" selected>other</option>
+                </select>
+            </div>
+            <div class="form-group my-2">
+                <label for="description">Description</label>
+                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="Add A description"></textarea>
+            </div>
+            <input type="hidden" name="date" id="date">
+            <input type="hidden" name="time" id="time">
+
+            <button type="submit" class="btn btn-primary" id="btn">ADD</button>     
+            <a href="/articles" class="btn btn-danger">Cancel</a>
+        </form>
+       
+        <h1 class="my-4" id="message">#{message}</h1>
+    </div>
+</body>
+script 
+    include ../js/jquery.js
+    include ../js/bootstrap.bundle.js
+    include ../js/toastr.min.js
+    include ../js/post.js
+</html>

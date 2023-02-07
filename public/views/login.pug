@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    style
+        include ../css/bootstrap.min.css
+        include ../css/style.css
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form action="/" method="post" class="">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="" placeholder="email" required class="form-control">
+            <p style="color:red">#{usererr}</p>
+        </div>
+            
+            <label for="password">password</label>
+            <input type="password" name="password" id="" placeholder="password" required class="form-control">
+            <p style="color:red">#{passerr}</p>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="/register" class="btn btn-success">register</a>
+
+        </form>
+    </div>
+</body>
+</html>

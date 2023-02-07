@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoW articles</title>
+    style
+        include ../css/bootstrap.min.css
+        include ../css/style.css
+</head>
+<body>
+    <div class="container-fluid p-4">
+        <img src="/static/uploads/#{article.img_src}" alt="#{article.title}" width="50%">
+        <h1 class="my-2">#{article.title}</h1>
+        <h4 class="my-2">#{article.catagory} Catagory</h3>
+        <div class="my-2 d-flex gap-3">
+            <a href="/articles" class="btn btn-danger">All articles</a>
+            <a href="/articles/edit/#{article.slug}" class="btn btn-primary">Edit</a>
+            
+            <form action="/articles/#{article.slug}?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-danger"  onclick="return confirm('Are you sure you want to delete this item')">Delete</button>
+            </form>
+        </div>
+        <div class="d-flex gap-3 text-muted my-2">
+            <p>#{article.date}</p> 
+            <p>#{article.time}</p> 
+        </div>
+        <p> - #{article.author}</p>
+ 
+        <hr class="hr">
+    </div>
+    <div class="container">
+        <div class="h5">
+            | #{article.description}
+        </div> 
+    </div>
+</body>
+script
+    include ../js/bootstrap.bundle.js
+</html>
